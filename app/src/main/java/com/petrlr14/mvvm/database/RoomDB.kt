@@ -24,7 +24,7 @@ public abstract class RoomDB : RoomDatabase() {
                return INSTANCE!!
             else{
                 synchronized(this) {
-                    val instance = Room
+                    INSTANCE = Room
                         .databaseBuilder(context, RoomDB::class.java, "Repo_Database")
                         .build()
                     return INSTANCE!!
